@@ -1,1 +1,6 @@
-This python file is used to divide large missions into number of small mission
+# How to run
+Type
+``` python Waypoiny-kml.py -md 6000 -sed 200
+```
+then select waypoints file
+
