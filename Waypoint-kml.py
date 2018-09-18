@@ -15,7 +15,7 @@ import argparse
 
 def Distance(starting_point, ending_point):
     distance = 0
-    for j in range(starting_point+1, ending_point):
+    for j in range(starting_point +1, ending_point):
         easting1, northing1, zone1, hemi1 = latlong2utm(lat[j-1], long[j-1])
         easting2, northing2, zone2, hemi2 = latlong2utm(lat[j], long[j])
         distance = distance + \
@@ -110,8 +110,9 @@ name = 0
 # Looping over all dataset
 for i in range(1, len(lat)):
     distance = Distance(starting_point, i)
+
     if distance > max_distance:  # Distance is greater than 10,000
         data_frame = total_way[starting_point:i-1]
         save_data(data_frame, name, location)
         name = name + 1
-        starting_point = i-1
+        starting_point = i-2
